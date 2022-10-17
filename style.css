@@ -1,0 +1,104 @@
+* {
+    font-family: 'Dosis', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* LIGHT MODE header */
+ .light-mode header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #8794c0;
+    width: 100%;
+    padding: 20px 0;
+    top: 0;
+    box-shadow: 0 0 25px 0 rgb(134 134 134 / 25%);
+}
+.light-mode .header-title {
+    font-family: 'Silkscreen', cursive;
+    font-size: 30px;
+}
+.light-mode .header-buttons {
+    margin: 0 15px;
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+}
+.header-icons {
+    padding: 0 5px;
+}
+/* DARK MODE header */
+
+.dark-mode {
+    background-color: #1c2135;
+}
+.main-cont {
+    height: 100vh;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.canvas-cont {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    margin: 30px 0;
+    /* background-color: #fff; */
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.meme-top-text-cont {
+    width: 100%;
+    min-height: 90px;
+    /* position: absolute; */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.meme-top-text {
+    color: black;
+    font-family: Impact;
+    font-size: 40px;
+}
+.meme-bottom-text-cont {
+    width: 100%;
+    min-height: 90px;
+    /* position: static; */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.meme-bottom-text {
+    color: black;
+    font-family: Impact;
+    font-size: 40px;
+}
+.download-button {
+    /* margin: 0 10px; */
+    border: none;
+    background-color: transparent;
+}
+.download-button-icon {
+    padding: 0 5px;
+}
+
+.aside-tools-mode-cont {
+    margin: 15px 0 0 0;
+}
+footer {
+    background-color: #5d7599;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
