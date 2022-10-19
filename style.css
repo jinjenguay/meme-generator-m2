@@ -5,7 +5,7 @@
     padding: 0;
 }
 /* LIGHT MODE header */
-#header {
+.header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +34,7 @@
 }
 /* DARK MODE header */
 
-.dark-mode #header {
+.dark-mode {
     background-color: #1c2135;
 }
 .dark-mode .header-title {
