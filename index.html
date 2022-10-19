@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
     <title>MEME Generator</title>
 </head>
-<body class="light-mode">
+<body>
     <header id="header">
         <h1 class="header-title">GENERADOR DE MEMES</h1>
         <div class="aside-tools-mode-cont">
             <button class="aside-tool-image-edit-button header-buttons"><i class="image-edit-button-icon fa-solid fa-image header-icons"></i>Imágen</button>
             <button class="aside-tool-text-edit-button header-buttons"><i class="text-edit-button-icon fa-solid fa-font header-icons"></i>Texto</button>
-            <button class="mode-button header-buttons"><i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Claro</button>
+            <button id="mode-btn" class="mode-button header-buttons"><i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Claro</button>
         </div>
     </header>
     <main class="main-cont" id="main">
@@ -33,7 +33,7 @@
             </div>
             <div class="meme-image-cont"></div>
             <div class="meme-bottom-text-cont">
-                <p class="meme-bottom-text">TEXTO</p>
+                <p class="meme-bottom-text">TEXTO abajo</p>
             </div>
         </div>
         <button class="download-button"><i class="fas fa-download download-button-icon"></i>Descargar</button>
@@ -54,5 +54,6 @@
             <p class="footer-info">Hecho por Jennifer Ews. 2022</p>
         </div>
     </footer>
+    <script src="./app.js"></script>
 </body>
 </html>
