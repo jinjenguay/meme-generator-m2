@@ -38,17 +38,44 @@
         </div>
         <button class="download-button"><i class="fas fa-download download-button-icon"></i>Descargar</button>
     </main>
-    <aside class="panel-editor">
-        <section class="text-edit-panel-section edit-section">
-            <h2 class="panel-imagen-title">IMÁGEN</h2>
-            <div class="text-edit-panel-cont">
-            </div>
-        </section>
-        <section class="image-edit-panel-section edit-section">
-            <h2 class="panel-text-title">TEXTO</h2>
-            <div class="image-edit-panel-cont"></div>
-        </section>
-    </aside>
+    <div class="aside-cont">
+        <aside class="panel-editor-sidebar" id="sidebar">
+            <!-- <div class="x-panel-button-cont">
+                <i class="x-panel-icon"></i>
+            </div> -->
+            <section id="image-edit-panel-section" class="edit-section">
+                <h2 class="img-panel-text-title">IMÁGEN</h2>
+                <div class="image-edit-panel-cont-url">
+                    <h3 class="image-url-title">URL</h3>
+                    <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de imagen">
+                </div>
+                <div class="image-edit-panel-cont-fondo">
+                    <h3 class="img-fondo-title">FONDO</h3>
+                    <div class="">
+                        <div class="">
+                            <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF">
+                            <!-- <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span> -->
+                        </div>
+                        <div class="">
+                            <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+                                <option value="unset">Ninguno</option>
+                                <option value="lighten">Aclarar</option>
+                                <option value="darken">Oscurecer</option>
+                                <option value="difference">Diferencia</option>
+                                <option value="luminosity">Luminosidad</option>
+                                <option value="multiply">Multiplicar</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="text-edit-panel-section" class="edit-section">
+                <h2 class="panel-imagen-title">Texto</h2>
+                <div class="text-edit-panel-cont">
+                </div>
+            </section>
+        </aside>
+    </div>
     <footer id="footer">
         <div class="footer-info-cont">
             <p class="footer-info">Hecho por Jennifer Ews. 2022</p>

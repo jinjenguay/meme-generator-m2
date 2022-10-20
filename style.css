@@ -32,6 +32,9 @@ header {
 .header-icons {
     padding: 0 5px;
 }
+.aside-tools-mode-cont {
+    margin: 15px 0 0 0;
+}
 /* DARK MODE header */
 .dark-mode {
     background-color: #1c2135;
@@ -105,10 +108,32 @@ main {
 .download-button-icon {
     padding: 0 5px 0 0;
 }
-
-.aside-tools-mode-cont {
-    margin: 15px 0 0 0;
+/* ASIDE PANEL */
+.aside-cont {
+    display: flex;
+    justify-content: flex-end;
 }
+.panel-editor-sidebar {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #abb6c8;
+}
+.dark-mode-panel{
+    background-color: #2d3141;
+    color: white;
+}
+#image-edit-panel-section {
+    /* background-color: #8794c0; */
+    margin: 15px 15px 0 15px;
+}
+#text-edit-panel-section {
+    background-color: #696b6e;
+    margin: 0 15px 0 15px;
+    display: none;
+}
+/* FOOTER STYLES */
 footer {
     background-color: #5d7599;
     min-height: 60px;
