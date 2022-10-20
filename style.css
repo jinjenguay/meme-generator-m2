@@ -5,7 +5,7 @@
     padding: 0;
 }
 /* LIGHT MODE header */
-.header {
+header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +33,6 @@
     padding: 0 5px;
 }
 /* DARK MODE header */
-
 .dark-mode {
     background-color: #1c2135;
 }
@@ -43,15 +42,16 @@
 .dark-mode .header-buttons {
     color: #fff;
 }
-.main-cont {
+main {
     height: 100vh;
     background-color: #eeeeee;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.dark-mode .main-cont {
-    background-color: #1c2135;
+/* DARK MODE main */
+.dark-mode-main {
+    background-color: #5a6794;
 }
 .canvas-cont {
     width: 100%;
@@ -116,4 +116,9 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+/* DARK MODE */
+.dark-mode-footer {
+    background-color: #1c2135;
+    color: #fff;
 }
