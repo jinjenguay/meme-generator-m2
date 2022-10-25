@@ -18,6 +18,7 @@
     <title>MEME Generator</title>
 </head>
 <body>
+    <!-- INICIO DEL HEADER -->
     <header class="header" id="header">
         <h1 class="header-title">GENERADOR DE MEMES</h1>
         <div class="aside-tools-mode-cont">
@@ -26,6 +27,9 @@
             <button id="mode-btn" class="mode-button header-buttons"><i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Oscuro</button>
         </div>
     </header>
+    <!-- FIN DEL HEADER -->
+    
+    <!-- INICIO DEL MAIN contenedor del lienzo del meme -->
     <main class="main-cont" id="main">
         <div class="canvas-cont">
             <div class="meme-top-text-cont">
@@ -38,6 +42,9 @@
         </div>
         <button class="download-button"><i class="fas fa-download download-button-icon"></i>Descargar</button>
     </main>
+    <!-- FIN DEL MAIN -->
+
+    <!-- INICIA EL PANEL OCULTO DE EDICIÓN DE TEXTO E IMÁGEN -->
     <div class="aside-cont">
         <aside class="panel-editor-sidebar" id="sidebar">
             <!-- <div class="x-panel-button-cont">
@@ -54,7 +61,7 @@
                     <div class="">
                         <div class="">
                             <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF">
-                            <!-- <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span> -->
+                            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
                         </div>
                         <div class="">
                             <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
@@ -76,11 +83,15 @@
             </section>
         </aside>
     </div>
+    <!-- FINALIZA EL PANEL OCULTO DE EDICIÓN DE TEXTO E IMÁGEN -->
+
+    <!-- COMIENZA EL FOOTER -->
     <footer id="footer">
         <div class="footer-info-cont">
             <p class="footer-info">Hecho por Jennifer Ews. 2022</p>
         </div>
     </footer>
+    <!-- FINALIZA EL FOOTER -->
     <script src="./app.js"></script>
 </body>
 </html>

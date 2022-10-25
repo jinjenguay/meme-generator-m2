@@ -110,7 +110,7 @@ main {
 }
 /* ASIDE PANEL */
 .aside-cont {
-    display: flex;
+    display: none;
     justify-content: flex-end;
 }
 .panel-editor-sidebar {
@@ -119,7 +119,16 @@ main {
     position: fixed;
     top: 0;
     background-color: #abb6c8;
+    /* align-items: center; */
+    /* justify-content: center; */
+    display: flex;
 }
+.open-sidebar {
+    display: flex;
+}
+/* .close-sidebar {
+    display: none;
+} */
 .dark-mode-panel{
     background-color: #2d3141;
     color: white;
@@ -127,12 +136,15 @@ main {
 #image-edit-panel-section {
     /* background-color: #8794c0; */
     margin: 15px 15px 0 15px;
+    display: none;
+    flex-direction: column;
 }
 #text-edit-panel-section {
     background-color: #696b6e;
     margin: 0 15px 0 15px;
     display: none;
 }
+
 /* FOOTER STYLES */
 footer {
     background-color: #5d7599;

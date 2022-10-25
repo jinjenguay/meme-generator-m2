@@ -3,6 +3,7 @@ const body = document.getElementsByTagName("body");
 const header = document.getElementById("header");
 const main = document.getElementById("main");
 const footer = document.getElementById("footer");
+const asideCont = document.querySelector(".aside-cont");
 const sidebar = document.getElementById("sidebar");
 const panelSidebar = document.querySelector(".panel-editor-sidebar");
 const sidebarImageBtn = document.querySelector(".aside-tool-image-edit-button");
@@ -61,3 +62,36 @@ lightDarkMode.addEventListener("click", () => {
 //     sidebarTextPanel.style.display="inline";
 //   }
 // });
+
+
+// sidebarImageBtn.addEventListener("click", () => {
+//   if(asideCont.style.display="none"){
+//     asideCont.classList.add("open-siderbar");
+//   } else if (asideCont.style.display="flex") {
+//     asideCont.classList.remove("open-sidebar");
+//   };
+
+//     // if(asideCont.classList.add("open-sidebar")) {
+//     //   asideCont.classList.remove("open-sidebar");
+//     //   asideCont.style.display="flex";
+//     // };
+// });
+// sidebarImageBtn.addEventListener("click", () => {
+//   if(asideCont.classList.add("open-sidebar")) {
+//     asideCont.style.display="flex";
+//   }
+// });
+
+sidebarTextBtn.addEventListener("click", () => {
+  asideCont.classList.toggle("open-sidebar");
+  // sidebarTextPanel.classList.toggle("open-text-editor");
+  sidebarTextPanel.style.display="flex";
+  sidebarImagePanel.style.display="none";
+});
+sidebarImageBtn.addEventListener("click", () => {
+  asideCont.classList.toggle("open-sidebar");
+  // sidebarImagePanel.classList.add("open-image-editor");
+  sidebarImagePanel.style.display="flex";
+  sidebarTextPanel.style.display="none";
+
+});
