@@ -15,6 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
+    <!-- PARA DESCARGA DE IMÁGEN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <title>MEME Generator</title>
 </head>
 <body>
@@ -31,25 +35,25 @@
     
     <!-- INICIO DEL MAIN contenedor del lienzo del meme -->
     <main class="main-cont" id="main">
-        <div class="canvas-cont">
+        <div class="canvas-cont" id="img-download">
             <div class="meme-top-text-cont">
                 <p class="meme-top-text">TEXTO</p>
             </div>
-            <div class="meme-image-cont"></div>
+            <div class="meme-image-cont">
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4E5_ocieKdCRlDd9XwDKCVJ9IUW85kaHwQ&usqp=CAU" class="meme-image"> -->
+            </div>
             <div class="meme-bottom-text-cont">
                 <p class="meme-bottom-text">TEXTO abajo</p>
             </div>
         </div>
-        <button class="download-button"><i class="fas fa-download download-button-icon"></i>Descargar</button>
+            <button class="download-button" id="download-meme"><i class="fas fa-download download-button-icon"></i>Descargar</button>
     </main>
     <!-- FIN DEL MAIN -->
 
     <!-- INICIA EL PANEL OCULTO DE EDICIÓN DE TEXTO E IMÁGEN -->
     <div class="aside-cont">
         <aside class="panel-editor-sidebar" id="sidebar">
-            <!-- <div class="x-panel-button-cont">
-                <i class="x-panel-icon"></i>
-            </div> -->
+            <!-- EDICIÓN DE IMÁGEN -->
             <section id="image-edit-panel-section" class="edit-section">
                 <h2 class="img-panel-text-title">IMÁGEN</h2>
                 <div class="image-edit-panel-cont-url">
@@ -76,6 +80,7 @@
                     </div>
                 </div>
             </section>
+            <!-- EDICIÓN DE TEXTO -->
             <section id="text-edit-panel-section" class="edit-section">
                 <h2 class="panel-imagen-title">Texto</h2>
                 <div class="text-edit-panel-cont">

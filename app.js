@@ -10,7 +10,8 @@ const sidebarImageBtn = document.querySelector(".aside-tool-image-edit-button");
 const sidebarTextBtn = document.querySelector(".aside-tool-text-edit-button");
 const sidebarTextPanel = document.getElementById("text-edit-panel-section");
 const sidebarImagePanel = document.getElementById("image-edit-panel-section");
-
+const imgDownload = document.getElementById("img-download");
+const btnDownload = document.getElementById("download-meme");
 
 // lightDarkMode.addEventListener("click",() => {
 //     if(header.classList.contains("light-mode")){
@@ -95,3 +96,11 @@ sidebarImageBtn.addEventListener("click", () => {
   sidebarTextPanel.style.display="none";
 
 });
+
+const descargarMeme = () => {
+  domtoimage.toBlob(imgDownload).then(function (blob) {
+    saveAs(blob, "mi-meme.jpg");
+  });
+};
+
+btnDownload.addEventListener("click", descargarMeme);
