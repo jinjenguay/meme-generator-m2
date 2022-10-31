@@ -41,9 +41,10 @@
             </div>
             <div class="meme-image-cont">
                 <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4E5_ocieKdCRlDd9XwDKCVJ9IUW85kaHwQ&usqp=CAU" class="meme-image"> -->
+                <!-- <img src="" class="meme-image" id="meme-image-form-url"> -->
             </div>
             <div class="meme-bottom-text-cont">
-                <p class="meme-bottom-text">TEXTO abajo</p>
+                <p class="meme-bottom-text">TEXTO</p>
             </div>
         </div>
             <button class="download-button" id="download-meme"><i class="fas fa-download download-button-icon"></i>Descargar</button>
@@ -54,36 +55,96 @@
     <div class="aside-cont">
         <aside class="panel-editor-sidebar" id="sidebar">
             <!-- EDICIÓN DE IMÁGEN -->
+            <div class="close-aside-btn-cont">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
             <section id="image-edit-panel-section" class="edit-section">
                 <h2 class="img-panel-text-title">IMÁGEN</h2>
-                <div class="image-edit-panel-cont-url">
-                    <h3 class="image-url-title">URL</h3>
-                    <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de imagen">
+                <div class="image-edit-panel-cont-url edit-cont">
+                    <h3 class="img-url-title img-subtitles">URL</h3>
+                    <input type="text" class="url-image-input" id="url-img-input" aria-label="URL de imagen">
                 </div>
                 <div class="image-edit-panel-cont-fondo">
-                    <h3 class="img-fondo-title">FONDO</h3>
-                    <div class="">
-                        <div class="">
-                            <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF">
-                            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                    <h3 class="img-fondo-title img-subtitles">FONDO</h3>
+                    <div class="fondo-divs-cont">
+                        <div class="blend-mode-color-cont edit-cont">
+                            <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#000000">
+                            <span id="blend-mode-color" aria-hidden="true">#000000</span>
                         </div>
-                        <div class="">
-                            <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+                        <div class="blend-mode-cont edit-cont">
+                            <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="img-edit-input">
                                 <option value="unset">Ninguno</option>
-                                <option value="lighten">Aclarar</option>
+                                <option value="luminosity">Luminosidad</option>
                                 <option value="darken">Oscurecer</option>
                                 <option value="difference">Diferencia</option>
-                                <option value="luminosity">Luminosidad</option>
                                 <option value="multiply">Multiplicar</option>
+                                <option value="lighten">Aclarar</option>
                             </select>
                         </div>
                     </div>
                 </div>
-            </section>
+                <div class="filter-img-edit-cont edit-cont">
+                    <h3 class="img-filtro-title img-subtitles">FILTROS</h3>
+                    <div class="edit-cont-slider">
+                      <label for="brightness-slider">BRILLO</label>
+                      <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="opacity-slider">OPACIDAD</label>
+                      <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="contrast-slider">CONTRASTE</label>
+                      <input type="range" id="contrast-slider" min="100" max="1000" value="100" step="1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="blur-slider">DESENFOQUE</label>
+                      <input type="range" id="blur-slider" min="0" max="10" value="0" step="0.1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="grayscale-slider">ESCALA DE GRISES</label>
+                      <input type="range" id="grayscale-slider" min="0" max="100" value="0" step="1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="sepia-slider">SEPIA</label>
+                      <input type="range" id="sepia-slider" min="0" max="100" value="0" step="1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="saturate-slider">SATURADO</label>
+                      <input type="range" id="saturate-slider" min="100" max="1000" value="100" step="10">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="hue-slider">HUE</label>
+                      <input type="range" id="hue-slider" min="0" max="359" value="0" step="1">
+                    </div>
+                    <div class="edit-cont-slider">
+                      <label for="invert-slider">NEGATIVO</label>
+                      <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1">
+                    </div>
+                </div>
+                <button class="default-button" id="default-filters-button">Reestablecer filtros</button>
+            </section>    
             <!-- EDICIÓN DE TEXTO -->
             <section id="text-edit-panel-section" class="edit-section">
-                <h2 class="panel-imagen-title">Texto</h2>
-                <div class="text-edit-panel-cont">
+                <!-- <div class="close-aside-btn-cont">
+                    <i class="fa-solid fa-xmark"></i>
+                </div> -->
+                <h2 class="img-panel-text-title">TEXTO</h2>
+                <div class="superior-text-edit-cont edit-cont">
+                    <h3 class="superior-text-title">SUPERIOR</h3>
+                    <textarea class="text-edit-input" id="top-text-input" aria-label="Texto superior">TEXTO</textarea>
+                    <div class="flex-container panel-control-checkbox">
+                      <input type="checkbox" id="no-top-text-checkbox"><label for="no-top-text-checkbox">Sin texto
+                        superior</label>
+                    </div>
+                </div>
+                <div class="inferior-text-edit-cont edit-cont">
+                    <h3 class="inferior-text-title">INFERIOR</h3>
+                    <textarea class="text-edit-input" id="bottom-text-input" aria-label="Texto inferior">TEXTO</textarea>
+                    <div class="flex-container panel-control-checkbox">
+                      <input type="checkbox" id="no-bottom-text-checkbox"><label for="no-bottom-text-checkbox">Sin texto
+                        inferior</label>
+                    </div>
                 </div>
             </section>
         </aside>

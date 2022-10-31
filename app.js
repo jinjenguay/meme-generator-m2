@@ -1,3 +1,5 @@
+const $ = (elemento) => document.querySelector(elemento);
+
 const lightDarkMode = document.getElementById("mode-btn");
 const body = document.getElementsByTagName("body");
 const header = document.getElementById("header");
@@ -12,6 +14,21 @@ const sidebarTextPanel = document.getElementById("text-edit-panel-section");
 const sidebarImagePanel = document.getElementById("image-edit-panel-section");
 const imgDownload = document.getElementById("img-download");
 const btnDownload = document.getElementById("download-meme");
+const asideCloseBtn = document.querySelector(".close-aside-btn-cont");
+const urlInput = document.querySelector("#url-img-input");
+const memeImageCont = document.querySelector(".meme-image-cont");
+const topTextMemeInput = $("#top-text-input");
+const bottomTextMemeInput = $("#bottom-text-input");
+const topTextMeme = $(".meme-top-text");
+const bottomTextMeme = $(".meme-bottom-text");
+const topTextMemeCont = $(".meme-top-text-cont");
+const bottomTextMemeCont = $(".meme-bottom-text-cont");
+const topTextMemeCheck = $("#no-top-text-checkbox");
+const bottomTextMemeCheck = $("#no-bottom-text-checkbox");
+const brightness = $("#brightness-slider");
+const imgBgColor = $("#blend-mode-color-input");
+const imgBlendMode = $("#blend-mode-select");
+const resetButton = $("#default-filters-button");
 
 // lightDarkMode.addEventListener("click",() => {
 //     if(header.classList.contains("light-mode")){
@@ -83,19 +100,108 @@ lightDarkMode.addEventListener("click", () => {
 //   }
 // });
 
+// Eventos para abrir y cerrar el panel oculto
+
 sidebarTextBtn.addEventListener("click", () => {
-  asideCont.classList.toggle("open-sidebar");
-  // sidebarTextPanel.classList.toggle("open-text-editor");
+  if(!asideCont.classList.contains("open-sidebar")){
+    asideCont.classList.toggle("open-sidebar");
+  } else if (sidebarTextPanel.style.display=="flex"){
+    asideCont.classList.toggle("open-sidebar");
+  }
   sidebarTextPanel.style.display="flex";
   sidebarImagePanel.style.display="none";
 });
 sidebarImageBtn.addEventListener("click", () => {
-  asideCont.classList.toggle("open-sidebar");
-  // sidebarImagePanel.classList.add("open-image-editor");
+  if(!asideCont.classList.contains("open-sidebar")){
+    asideCont.classList.toggle("open-sidebar");
+  } else if (sidebarImagePanel.style.display=="flex") {
+    asideCont.classList.toggle("open-sidebar");
+ }
   sidebarImagePanel.style.display="flex";
   sidebarTextPanel.style.display="none";
-
+  panelSidebar.style.overflow="scroll";
 });
+
+asideCloseBtn.addEventListener("click", () => {
+  asideCont.classList.toggle("open-sidebar");
+})
+
+// Evento para introducir la imágen
+
+urlInput.addEventListener("change", () => {
+  // memeImageCont.innerHTML = '<img src="'+ urlInput.value +'" class="meme-image" id="image-cont">';
+  memeImageCont.style.backgroundImage=`url(${urlInput.value})`;
+  // if(urlInput.value == "") {
+  //   memeImageCont.innerHTML = '';
+  // }
+});
+
+// Eventos para editar Imagen del meme
+
+brightness.addEventListener("input", () => {
+  memeImageCont.style.filter=`brightness(${brightness.value})`;
+})
+
+imgBgColor.addEventListener("input", () => {
+  memeImageCont.style.backgroundColor=imgBgColor.value;
+  $("#blend-mode-color").innerText=imgBgColor.value;
+})
+
+imgBlendMode.addEventListener("change", () => {
+  memeImageCont.style.backgroundBlendMode=imgBlendMode.value;
+})
+
+resetButton.addEventListener("click", () => {
+  // Llamo a que el filtro este en su valor default
+  brightness.value=1;
+  imgBgColor.value="#000000";
+  imgBlendMode.value="unset";
+  // Llamo a que el filtro dispare un nuevo evento (el mismo evento del filtro) para que tome lo de arriba en la imagen
+  brightness.dispatchEvent(new Event('input'));
+  imgBgColor.dispatchEvent(new Event('input'));
+  imgBlendMode.dispatchEvent(new Event('change'));
+
+})
+// Eventos para editar el texto
+
+topTextMemeInput.addEventListener("keyup", () => {
+  topTextMeme.innerText = topTextMemeInput.value;
+});
+
+bottomTextMemeInput.addEventListener("keyup", () => {
+  bottomTextMeme.innerText = bottomTextMemeInput.value;
+});
+
+topTextMemeCheck.addEventListener("click", () => {
+  if(topTextMemeCheck.checked == true){
+    topTextMemeCont.style.display="none";
+  } else {
+    topTextMemeCont.style.display="flex";
+  }
+})
+
+bottomTextMemeCheck.addEventListener("click", () => {
+  if(bottomTextMemeCheck.checked == true){
+    bottomTextMemeCont.style.display="none";
+  } else {
+    bottomTextMemeCont.style.display="flex";
+  }
+})
+
+// sidebarTextBtn.addEventListener("click", () => {
+//   asideCont.classList.toggle("open-sidebar");
+//   sidebarTextPanel.style.display="flex";
+//   sidebarImagePanel.style.display="none";
+// });
+// sidebarImageBtn.addEventListener("click", () => {
+//   asideCont.classList.toggle("open-sidebar");
+//   sidebarImagePanel.style.display="flex";
+//   sidebarTextPanel.style.display="none";
+// });
+
+
+
+
 
 const descargarMeme = () => {
   domtoimage.toBlob(imgDownload).then(function (blob) {
