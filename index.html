@@ -60,17 +60,21 @@
             </div>
             <section id="image-edit-panel-section" class="edit-section">
                 <h2 class="img-panel-text-title">IMÁGEN</h2>
+                <!-- URL de la imágen del meme -->
                 <div class="image-edit-panel-cont-url edit-cont">
                     <h3 class="img-url-title img-subtitles">URL</h3>
                     <input type="text" class="url-image-input" id="url-img-input" aria-label="URL de imagen">
                 </div>
+                <!-- Fondo del meme -->
                 <div class="image-edit-panel-cont-fondo">
                     <h3 class="img-fondo-title img-subtitles">FONDO</h3>
                     <div class="fondo-divs-cont">
+                        <!-- Color sobre imágen -->
                         <div class="blend-mode-color-cont edit-cont">
                             <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#000000">
                             <span id="blend-mode-color" aria-hidden="true">#000000</span>
                         </div>
+                        <!-- Impacto del color sobre imágen -->
                         <div class="blend-mode-cont edit-cont">
                             <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="img-edit-input">
                                 <option value="unset">Ninguno</option>
@@ -83,6 +87,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Filtros de la imágen -->
                 <div class="filter-img-edit-cont edit-cont">
                     <h3 class="img-filtro-title img-subtitles">FILTROS</h3>
                     <div class="edit-cont-slider">
@@ -95,7 +100,7 @@
                     </div>
                     <div class="edit-cont-slider">
                       <label for="contrast-slider">CONTRASTE</label>
-                      <input type="range" id="contrast-slider" min="100" max="1000" value="100" step="1">
+                      <input type="range" id="contrast-slider" min="0" max="2" value="1" step="0.1">
                     </div>
                     <div class="edit-cont-slider">
                       <label for="blur-slider">DESENFOQUE</label>
@@ -118,32 +123,77 @@
                       <input type="range" id="hue-slider" min="0" max="359" value="0" step="1">
                     </div>
                     <div class="edit-cont-slider">
-                      <label for="invert-slider">NEGATIVO</label>
-                      <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1">
+                      <label for="negative-slider">NEGATIVO</label>
+                      <input type="range" id="negative-slider" min="0" max="100" value="0" step="1">
                     </div>
                 </div>
+                <!-- El botoncito que deshace tu obra maestra -->
                 <button class="default-button" id="default-filters-button">Reestablecer filtros</button>
             </section>    
             <!-- EDICIÓN DE TEXTO -->
             <section id="text-edit-panel-section" class="edit-section">
-                <!-- <div class="close-aside-btn-cont">
-                    <i class="fa-solid fa-xmark"></i>
-                </div> -->
                 <h2 class="img-panel-text-title">TEXTO</h2>
+                <!-- Edición de texto superior del meme -->
                 <div class="superior-text-edit-cont edit-cont">
-                    <h3 class="superior-text-title">SUPERIOR</h3>
+                    <h3 class="superior-text-title text-subtitles">SUPERIOR</h3>
                     <textarea class="text-edit-input" id="top-text-input" aria-label="Texto superior">TEXTO</textarea>
                     <div class="flex-container panel-control-checkbox">
                       <input type="checkbox" id="no-top-text-checkbox"><label for="no-top-text-checkbox">Sin texto
                         superior</label>
                     </div>
                 </div>
+                <!-- Edición de texto inferior del meme -->
                 <div class="inferior-text-edit-cont edit-cont">
-                    <h3 class="inferior-text-title">INFERIOR</h3>
+                    <h3 class="inferior-text-title text-subtitles">INFERIOR</h3>
                     <textarea class="text-edit-input" id="bottom-text-input" aria-label="Texto inferior">TEXTO</textarea>
                     <div class="flex-container panel-control-checkbox">
                       <input type="checkbox" id="no-bottom-text-checkbox"><label for="no-bottom-text-checkbox">Sin texto
                         inferior</label>
+                    </div>
+                </div>
+                <!-- Edición de fuente del meme -->
+                <div class="meme-text-font edit-cont">
+                    <h3 class="font-edit text-subtitles">FUENTE</h3>
+                    <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
+                        <option value="Arial">Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="American Typewriter">American Typewriter</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact" selected="">Impact</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                    <div class="font-size-align-cont">
+                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12" value="40">
+                        <div class="buttons-container buttons-alignment">
+                          <button class="button button-default" id="text-left-align-button" aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                          <button class="button button-default" id="text-center-align-button" aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                          <button class="button button-default" id="text-right-align-button" aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-control">
+                    <div class="panel-control-columns">
+                      <div class="panel-control panel-control-column">
+                        <h3 class="panel-control-title">COLOR</h3>
+                        <div class="panel-control-color">
+                          <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto">
+                          <span id="text-color" aria-hidden="true">#000000</span>
+                        </div>
+                      </div>
+                      <div class="panel-control panel-control-column">
+                        <h3 class="panel-control-title">FONDO</h3>
+                        <div class="panel-control-color">
+                          <input name="Color de fondo de texto" type="color" id="text-background-color-input" value="#FFFFFF" aria-label="Color de fondo de texto">
+                          <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-container panel-control-checkbox">
+                      <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
+                        transparente</label>
                     </div>
                 </div>
             </section>

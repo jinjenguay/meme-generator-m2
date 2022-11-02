@@ -25,10 +25,19 @@ const topTextMemeCont = $(".meme-top-text-cont");
 const bottomTextMemeCont = $(".meme-bottom-text-cont");
 const topTextMemeCheck = $("#no-top-text-checkbox");
 const bottomTextMemeCheck = $("#no-bottom-text-checkbox");
-const brightness = $("#brightness-slider");
 const imgBgColor = $("#blend-mode-color-input");
 const imgBlendMode = $("#blend-mode-select");
 const resetButton = $("#default-filters-button");
+const brightnessFilter = $("#brightness-slider");
+const opacityFilter = $("#opacity-slider");
+const contrastFilter = $("#contrast-slider");
+const blurFilter = $("#blur-slider");
+const grayscalefilter = $("#grayscale-slider");
+const sepiaFilter = $("#sepia-slider");
+const saturateFilter = $("#saturate-slider");
+const hueFilter = $("#hue-slider");
+const negativeFilter = $("#negative-slider");
+
 
 // lightDarkMode.addEventListener("click",() => {
 //     if(header.classList.contains("light-mode")){
@@ -138,10 +147,6 @@ urlInput.addEventListener("change", () => {
 
 // Eventos para editar Imagen del meme
 
-brightness.addEventListener("input", () => {
-  memeImageCont.style.filter=`brightness(${brightness.value})`;
-})
-
 imgBgColor.addEventListener("input", () => {
   memeImageCont.style.backgroundColor=imgBgColor.value;
   $("#blend-mode-color").innerText=imgBgColor.value;
@@ -151,16 +156,67 @@ imgBlendMode.addEventListener("change", () => {
   memeImageCont.style.backgroundBlendMode=imgBlendMode.value;
 })
 
+brightnessFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`brightness(${brightnessFilter.value})`;
+})
+
+contrastFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`contrast(${contrastFilter.value})`;
+})
+
+opacityFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`opacity(${opacityFilter.value})`;
+})
+
+blurFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`blur(${blurFilter.value}px)`;
+})
+
+grayscalefilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`grayscale(${grayscalefilter.value}%)`;
+})
+
+sepiaFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`sepia(${sepiaFilter.value}%)`;
+})
+
+saturateFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`saturate(${saturateFilter.value}%)`;
+})
+
+hueFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`hue-rotate(${hueFilter.value}deg)`;
+})
+
+negativeFilter.addEventListener("input", () => {
+  memeImageCont.style.filter=`invert(${negativeFilter.value}%)`;
+})
+
 resetButton.addEventListener("click", () => {
   // Llamo a que el filtro este en su valor default
-  brightness.value=1;
   imgBgColor.value="#000000";
   imgBlendMode.value="unset";
+  brightnessFilter.value=1;
+  opacityFilter.value=1;
+  contrastFilter.value=1;
+  blurFilter.value=0;
+  grayscalefilter.value=0;
+  sepiaFilter.value=0;
+  saturateFilter.value=100;
+  hueFilter.value=0;
+  negativeFilter.value=0;
   // Llamo a que el filtro dispare un nuevo evento (el mismo evento del filtro) para que tome lo de arriba en la imagen
-  brightness.dispatchEvent(new Event('input'));
   imgBgColor.dispatchEvent(new Event('input'));
   imgBlendMode.dispatchEvent(new Event('change'));
-
+  brightnessFilter.dispatchEvent(new Event('input'));
+  contrastFilter.dispatchEvent(new Event('input'));
+  opacityFilter.dispatchEvent(new Event('input'));
+  blurFilter.dispatchEvent(new Event('input'));
+  grayscalefilter.dispatchEvent(new Event('input'));
+  sepiaFilter.dispatchEvent(new Event('input'));
+  saturateFilter.dispatchEvent(new Event('input'));
+  hueFilter.dispatchEvent(new Event('input'));
+  negativeFilter.dispatchEvent(new Event('input'));
 })
 // Eventos para editar el texto
 
