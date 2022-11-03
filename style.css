@@ -24,14 +24,18 @@ header {
 }
 .header-buttons {
     margin: 0 15px;
-    padding: 0;
+    padding: 8px 10px;
     font-size: 16px;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
+.header-buttons:hover {
+    background-color: #abb6c8;
+    border-radius: 7px;
+}
 .header-icons {
-    padding: 0 5px;
+    padding: 0 5px 0 0;
 }
 .aside-tools-mode-cont {
     margin: 15px 0 0 0;
@@ -61,17 +65,18 @@ main {
     background-color: #5a6794;
 }
 .canvas-cont {
-    /* width: 100%; */
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: 450px;
     /* margin: 30px 0; */
     /* background-color: #fff; */
     background-color: black;
     position: relative;
+    background-size: cover;
     display: flex;
     flex-direction: column;
 }
-.meme-top-text-cont {
+/* .meme-top-text-cont {
     width: 100%;
     min-height: 85px;
     position: static;
@@ -81,14 +86,20 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .meme-top-text {
+    width: 100%;
     color: black;
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #fff;
     font-family: Impact;
     font-size: 40px;
+    z-index: 5;
+    top: 0;
 }
 
-.meme-bottom-text-cont {
+/* .meme-bottom-text-cont {
     width: 100%;
     min-height: 85px;
     padding: 5px 10px;
@@ -96,7 +107,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .meme-image-cont {
     width: 100%;
     flex: 1;
@@ -108,9 +119,15 @@ main {
     object-fit: cover;
 }
 .meme-bottom-text {
+    width: 100%;
     color: black;
+    background-color: #fff;
+    padding: 20px 10px;
+    text-align: center;
     font-family: Impact;
     font-size: 40px;
+    z-index: 5;
+    bottom: 0;
 }
 /* .restablecerFiltros {
     filter: brightness(1)
@@ -133,6 +150,9 @@ main {
     cursor: pointer;
     font-size: 20px;
 }
+.download-button:hover {
+    background-color: rgb(151, 223, 43);
+}
 .download-button-icon {
     padding: 0 5px 0 0;
 }
@@ -142,6 +162,7 @@ main {
     justify-content: flex-end;
 }
 .panel-editor-sidebar {
+    z-index: 10;
     height: 100vh;
     width: 20%;
     position: fixed;
@@ -222,4 +243,10 @@ footer {
 .dark-mode-footer {
     background-color: #1c2135;
     color: #fff;
+}
+
+@media (max-width: 720px) {
+    .panel-editor-sidebar {
+        width: 100% !important;
+    }
 }

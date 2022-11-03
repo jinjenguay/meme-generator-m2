@@ -239,17 +239,17 @@ bottomTextMemeInput.addEventListener("keyup", () => {
 
 topTextMemeCheck.addEventListener("click", () => {
   if(topTextMemeCheck.checked == true){
-    topTextMemeCont.style.display="none";
+    topTextMeme.style.display="none";
   } else {
-    topTextMemeCont.style.display="flex";
+    topTextMeme.style.display="block";
   }
 });
 
 bottomTextMemeCheck.addEventListener("click", () => {
   if(bottomTextMemeCheck.checked == true){
-    bottomTextMemeCont.style.display="none";
+    bottomTextMeme.style.display="none";
   } else {
-    bottomTextMemeCont.style.display="flex";
+    bottomTextMeme.style.display="block";
   }
 });
 
@@ -267,18 +267,18 @@ textSizeInput.addEventListener("change", () => {
 
 // Eventos de alineación del texto
 textAlingBtnLeft.addEventListener("click", () => {
-  bottomTextMemeCont.style.justifyContent="flex-start";
-  topTextMemeCont.style.justifyContent="flex-start";
+  bottomTextMeme.style.textAlign="start";
+  topTextMeme.style.textAlign="start";
 });
 
 textAlingBtnCenter.addEventListener("click", () => {
-  bottomTextMemeCont.style.justifyContent="center";
-  topTextMemeCont.style.justifyContent="center";
+  bottomTextMeme.style.textAlign="center";
+  topTextMeme.style.textAlign="center";
 });
 
 textAlingBtnRight.addEventListener("click", () => {
-  bottomTextMemeCont.style.justifyContent="flex-end";
-  topTextMemeCont.style.justifyContent="flex-end";
+  bottomTextMeme.style.textAlign="end";
+  topTextMeme.style.textAlign="end";
 });
 
 // Eventos de color del texto y del fondo del texto
@@ -289,19 +289,28 @@ textColorInput.addEventListener("input", () => {
 });
 
 textBGColorInput.addEventListener("input", () => {
-  topTextMemeCont.style.backgroundColor=textBGColorInput.value;
-  bottomTextMemeCont.style.backgroundColor=textBGColorInput.value; 
+  topTextMeme.style.backgroundColor=textBGColorInput.value;
+  bottomTextMeme.style.backgroundColor=textBGColorInput.value; 
   $("#text-background-color").innerText=textBGColorInput.value;
 });
 
 noTextBGCheck.addEventListener("click", () => {
   console.log(noTextBGCheck.value);
   if(noTextBGCheck.checked == true){
-    topTextMemeCont.style.backgroundColor="transparent";
-    bottomTextMemeCont.style.backgroundColor="transparent";
+    topTextMeme.style.backgroundColor="transparent";
+    bottomTextMeme.style.backgroundColor="transparent";
+    // memeImageCont.style.visibility="hidden";
+    // imgDownload.style.backgroundImage=`url("${urlInput.value}")`;
+    topTextMeme.style.position="absolute";
+    bottomTextMeme.style.position="absolute";
+    // topTextMeme.style.top="0px";
+    // bottomTextMeme.style.top="0px";
   } else {
-    topTextMemeCont.style.backgroundColor=`${textBGColorInput.value}`;
-    bottomTextMemeCont.style.backgroundColor=`${textBGColorInput.value}`;
+    topTextMeme.style.backgroundColor=`${textBGColorInput.value}`;
+    bottomTextMeme.style.backgroundColor=`${textBGColorInput.value}`;
+    topTextMeme.style.position="";
+    bottomTextMeme.style.position="";
+    // memeImageCont.style.visibility="";
   }
 });
 
