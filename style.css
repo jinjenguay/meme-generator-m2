@@ -39,6 +39,9 @@ header {
 }
 .aside-tools-mode-cont {
     margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 /* DARK MODE header */
 .dark-mode {
