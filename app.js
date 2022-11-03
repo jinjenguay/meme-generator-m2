@@ -37,6 +37,16 @@ const sepiaFilter = $("#sepia-slider");
 const saturateFilter = $("#saturate-slider");
 const hueFilter = $("#hue-slider");
 const negativeFilter = $("#negative-slider");
+const textFontSelect = $("#text-font-select");
+const textSizeInput = $("#text-size-input");
+const textAlingBtnLeft = $("#text-left-align-button");
+const textAlingBtnCenter = $("#text-center-align-button");
+const textAlingBtnRight = $("#text-right-align-button");
+const textColorInput = $("#text-color-input");
+const textBGColorInput= $("#text-background-color-input");
+const noTextBGCheck = $("#text-no-background-checkbox");
+
+
 
 
 // lightDarkMode.addEventListener("click",() => {
@@ -145,52 +155,51 @@ urlInput.addEventListener("change", () => {
   // }
 });
 
-// Eventos para editar Imagen del meme
-
+// Eventos para editar Imagen del meme con filtros
 imgBgColor.addEventListener("input", () => {
   memeImageCont.style.backgroundColor=imgBgColor.value;
   $("#blend-mode-color").innerText=imgBgColor.value;
-})
+});
 
 imgBlendMode.addEventListener("change", () => {
   memeImageCont.style.backgroundBlendMode=imgBlendMode.value;
-})
+});
 
 brightnessFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`brightness(${brightnessFilter.value})`;
-})
+});
 
 contrastFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`contrast(${contrastFilter.value})`;
-})
+});
 
 opacityFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`opacity(${opacityFilter.value})`;
-})
+});
 
 blurFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`blur(${blurFilter.value}px)`;
-})
+});
 
 grayscalefilter.addEventListener("input", () => {
   memeImageCont.style.filter=`grayscale(${grayscalefilter.value}%)`;
-})
+});
 
 sepiaFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`sepia(${sepiaFilter.value}%)`;
-})
+});
 
 saturateFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`saturate(${saturateFilter.value}%)`;
-})
+});
 
 hueFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`hue-rotate(${hueFilter.value}deg)`;
-})
+});
 
 negativeFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`invert(${negativeFilter.value}%)`;
-})
+});
 
 resetButton.addEventListener("click", () => {
   // Llamo a que el filtro este en su valor default
@@ -217,9 +226,9 @@ resetButton.addEventListener("click", () => {
   saturateFilter.dispatchEvent(new Event('input'));
   hueFilter.dispatchEvent(new Event('input'));
   negativeFilter.dispatchEvent(new Event('input'));
-})
-// Eventos para editar el texto
+});
 
+// Eventos para editar el texto
 topTextMemeInput.addEventListener("keyup", () => {
   topTextMeme.innerText = topTextMemeInput.value;
 });
@@ -234,7 +243,7 @@ topTextMemeCheck.addEventListener("click", () => {
   } else {
     topTextMemeCont.style.display="flex";
   }
-})
+});
 
 bottomTextMemeCheck.addEventListener("click", () => {
   if(bottomTextMemeCheck.checked == true){
@@ -242,22 +251,61 @@ bottomTextMemeCheck.addEventListener("click", () => {
   } else {
     bottomTextMemeCont.style.display="flex";
   }
-})
+});
 
-// sidebarTextBtn.addEventListener("click", () => {
-//   asideCont.classList.toggle("open-sidebar");
-//   sidebarTextPanel.style.display="flex";
-//   sidebarImagePanel.style.display="none";
-// });
-// sidebarImageBtn.addEventListener("click", () => {
-//   asideCont.classList.toggle("open-sidebar");
-//   sidebarImagePanel.style.display="flex";
-//   sidebarTextPanel.style.display="none";
-// });
+// Evento de selección de fuente del texto
+textFontSelect.addEventListener("click", () => {
+  bottomTextMeme.style.fontFamily=textFontSelect.value;
+  topTextMeme.style.fontFamily=textFontSelect.value;
+});
 
+// Evento de selección de tamaño de fuente
+textSizeInput.addEventListener("change", () => {
+  bottomTextMeme.style.fontSize=`${textSizeInput.value}px`;
+  topTextMeme.style.fontSize=`${textSizeInput.value}px`;
+});
 
+// Eventos de alineación del texto
+textAlingBtnLeft.addEventListener("click", () => {
+  bottomTextMemeCont.style.justifyContent="flex-start";
+  topTextMemeCont.style.justifyContent="flex-start";
+});
 
+textAlingBtnCenter.addEventListener("click", () => {
+  bottomTextMemeCont.style.justifyContent="center";
+  topTextMemeCont.style.justifyContent="center";
+});
 
+textAlingBtnRight.addEventListener("click", () => {
+  bottomTextMemeCont.style.justifyContent="flex-end";
+  topTextMemeCont.style.justifyContent="flex-end";
+});
+
+// Eventos de color del texto y del fondo del texto
+textColorInput.addEventListener("input", () => {
+  topTextMeme.style.color=textColorInput.value;
+  bottomTextMeme.style.color=textColorInput.value; 
+  $("#text-color").innerText=textColorInput.value;
+});
+
+textBGColorInput.addEventListener("input", () => {
+  topTextMemeCont.style.backgroundColor=textBGColorInput.value;
+  bottomTextMemeCont.style.backgroundColor=textBGColorInput.value; 
+  $("#text-background-color").innerText=textBGColorInput.value;
+});
+
+noTextBGCheck.addEventListener("click", () => {
+  console.log(noTextBGCheck.value);
+  if(noTextBGCheck.checked == true){
+    topTextMemeCont.style.backgroundColor="transparent";
+    bottomTextMemeCont.style.backgroundColor="transparent";
+  } else {
+    topTextMemeCont.style.backgroundColor=`${textBGColorInput.value}`;
+    bottomTextMemeCont.style.backgroundColor=`${textBGColorInput.value}`;
+  }
+});
+
+// EVENTO DE DESCARGA
 
 const descargarMeme = () => {
   domtoimage.toBlob(imgDownload).then(function (blob) {
