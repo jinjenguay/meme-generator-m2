@@ -70,7 +70,7 @@
                     <h3 class="img-fondo-title img-subtitles">FONDO</h3>
                     <div class="fondo-divs-cont">
                         <!-- Color sobre imágen -->
-                        <div class="blend-mode-color-cont edit-cont">
+                        <div class="blend-mode-color-cont">
                             <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#000000">
                             <span id="blend-mode-color" aria-hidden="true">#000000</span>
                         </div>
@@ -153,8 +153,8 @@
                 </div>
                 <!-- Edición de fuente del meme -->
                 <div class="meme-text-font edit-cont">
-                    <h3 class="font-edit text-subtitles">FUENTE</h3>
-                    <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
+                    <h3 class="text-subtitles">FUENTE</h3>
+                    <select name="Familia de fuente" id="text-font-select" class="text-edit-input" aria-label="Familia de fuente">
                         <option value="Arial">Arial</option>
                         <option value="Arial Black">Arial Black</option>
                         <option value="Comic Sans MS">Comic Sans MS</option>
@@ -166,35 +166,50 @@
                         <option value="Times New Roman">Times New Roman</option>
                     </select>
                     <div class="font-size-align-cont">
-                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12" value="40">
-                        <div class="buttons-container buttons-alignment">
-                          <button class="button button-default" id="text-left-align-button" aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                          <button class="button button-default" id="text-center-align-button" aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
-                          <button class="button button-default" id="text-right-align-button" aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                        <div class="font-size-cont">
+                          <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="text-edit-input" id="text-size-input" min="12" value="40">
+                        </div>
+                        <div class="align-buttons-cont">
+                          <button class="align-button" id="text-left-align-button" aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                          <button class="align-button" id="text-center-align-button" aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                          <button class="align-button" id="text-right-align-button" aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="panel-control">
-                    <div class="panel-control-columns">
-                      <div class="panel-control panel-control-column">
-                        <h3 class="panel-control-title">COLOR</h3>
-                        <div class="panel-control-color">
-                          <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto">
-                          <span id="text-color" aria-hidden="true">#000000</span>
-                        </div>
-                      </div>
-                      <div class="panel-control panel-control-column">
-                        <h3 class="panel-control-title">FONDO</h3>
-                        <div class="panel-control-color">
-                          <input name="Color de fondo de texto" type="color" id="text-background-color-input" value="#FFFFFF" aria-label="Color de fondo de texto">
-                          <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
-                        </div>
-                      </div>
+                <!-- Edición del color del texto y el fondo del texto -->
+                <div class="text-color-edit-cont">
+                    <h3 class="text-subtitles">COLOR</h3>
+                    <div class="text-color-edit-input">
+                      <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto">
+                      <span id="text-color" aria-hidden="true">#000000</span>
                     </div>
-                    <div class="flex-container panel-control-checkbox">
-                      <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
-                        transparente</label>
+                </div>
+                <div class="text-bg-edit-cont edit-cont">
+                    <h3 class="text-subtitles">FONDO</h3>
+                    <div class="text-bg-edit-input">
+                      <input name="Color de fondo de texto" type="color" id="text-background-color-input" value="#FFFFFF" aria-label="Color de fondo de texto">
+                      <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
                     </div>
+                    <div class="text-bg-btn-cont">
+                      <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo transparente</label>
+                    </div>
+                </div>
+                <!-- Edición del espaciado del texto del meme -->
+                <div class="text-spacing-cont edit-cont">
+                  <h3 class="text-subtitles">ESPACIADO</h3>
+                  <input type="number" id="spacing-input" class="text-edit-input" aria-label="Espaciado" min="10" max="50" value="35">
+                </div>
+                <!-- Edición del interlineado del texto del meme -->
+                <div class="line-height-cont edit-cont">
+                  <h3 class="text-subtitles">INTERLINEADO</h3>
+                  <select id="line-height-input" class="text-edit-input" aria-label="Interlineado">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected="">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                  </select>
                 </div>
             </section>
         </aside>

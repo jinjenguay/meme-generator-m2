@@ -129,6 +129,7 @@ sidebarTextBtn.addEventListener("click", () => {
   }
   sidebarTextPanel.style.display="flex";
   sidebarImagePanel.style.display="none";
+  panelSidebar.style.overflow="scroll";
 });
 sidebarImageBtn.addEventListener("click", () => {
   if(!asideCont.classList.contains("open-sidebar")){
