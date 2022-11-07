@@ -1,33 +1,33 @@
 const $ = (elemento) => document.querySelector(elemento);
 
-const lightDarkMode = document.getElementById("mode-btn");
+// Variables principales
 const body = document.getElementsByTagName("body");
-const header = document.getElementById("header");
-const main = document.getElementById("main");
-const footer = document.getElementById("footer");
-const asideCont = document.querySelector(".aside-cont");
-const sidebar = document.getElementById("sidebar");
-const panelSidebar = document.querySelector(".panel-editor-sidebar");
-const sidebarImageBtn = document.querySelector(".aside-tool-image-edit-button");
-const sidebarTextBtn = document.querySelector(".aside-tool-text-edit-button");
-const sidebarTextPanel = document.getElementById("text-edit-panel-section");
-const sidebarImagePanel = document.getElementById("image-edit-panel-section");
-const imgDownload = document.getElementById("img-download");
-const btnDownload = document.getElementById("download-meme");
-const asideCloseBtn = document.querySelector(".close-aside-btn-cont");
-const urlInput = document.querySelector("#url-img-input");
-const memeImageCont = document.querySelector(".meme-image-cont");
-const topTextMemeInput = $("#top-text-input");
-const bottomTextMemeInput = $("#bottom-text-input");
+const header = $("#header");
+const main = $("#main");
+const footer = $("#footer");
+// Variables de cambio de modo oscuro - modo claro 
+const lightDarkMode = $("#mode-btn");
+// Variables del sidebar
+const asideCont = $(".aside-cont");
+const sidebar = $("#sidebar");
+const sidebarImageBtn = $(".aside-tool-image-edit-button");
+const sidebarTextBtn = $(".aside-tool-text-edit-button");
+const sidebarTextPanel = $("#text-edit-panel-section");
+const sidebarImagePanel = $("#image-edit-panel-section");
+const asideCloseBtn = $(".close-aside-btn");
+// Variables del botón de descarga
+const imgDownload = $("#img-download");
+const btnDownload = $("#download-meme");
+// Variables del contenedor del meme
+const memeImageCont = $(".meme-image-cont");
 const topTextMeme = $(".meme-top-text");
 const bottomTextMeme = $(".meme-bottom-text");
 const topTextMemeCont = $(".meme-top-text-cont");
 const bottomTextMemeCont = $(".meme-bottom-text-cont");
-const topTextMemeCheck = $("#no-top-text-checkbox");
-const bottomTextMemeCheck = $("#no-bottom-text-checkbox");
+// Variables del sidebar de edición de imágen
+const urlInput = $("#url-img-input");
 const imgBgColor = $("#blend-mode-color-input");
 const imgBlendMode = $("#blend-mode-select");
-const resetButton = $("#default-filters-button");
 const brightnessFilter = $("#brightness-slider");
 const opacityFilter = $("#opacity-slider");
 const contrastFilter = $("#contrast-slider");
@@ -37,6 +37,12 @@ const sepiaFilter = $("#sepia-slider");
 const saturateFilter = $("#saturate-slider");
 const hueFilter = $("#hue-slider");
 const negativeFilter = $("#negative-slider");
+const resetButton = $("#default-filters-button");
+// Variables del sidebar de edición de texto
+const topTextMemeInput = $("#top-text-input");
+const bottomTextMemeInput = $("#bottom-text-input");
+const topTextMemeCheck = $("#no-top-text-checkbox");
+const bottomTextMemeCheck = $("#no-bottom-text-checkbox");
 const textFontSelect = $("#text-font-select");
 const textSizeInput = $("#text-size-input");
 const textAlingBtnLeft = $("#text-left-align-button");
@@ -45,36 +51,17 @@ const textAlingBtnRight = $("#text-right-align-button");
 const textColorInput = $("#text-color-input");
 const textBGColorInput= $("#text-background-color-input");
 const noTextBGCheck = $("#text-no-background-checkbox");
+const spacingTextInput = $("#spacing-input");
+const lineHeighTextInput = $("#line-height-input");
 
 
 
-
-// lightDarkMode.addEventListener("click",() => {
-//     if(header.classList.contains("light-mode")){
-//         header.classList.remove("light-mode")
-//     } else {
-//         header.classList.add("dark-mode")
-//     }
-// })
-
-// lightDarkMode.addEventListener("click", () => {
-//     header.classList.toggle("dark-mode");
-//     main.classList.toggle("dark-mode-main");
-//     footer.classList.toggle("dark-mode-footer");
-
-//     if (header.classList.contains("dark-mode")){
-//         lightDarkMode.innerHTML =
-//         '<i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Oscuro'
-//     } else {
-//         '<i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Claro'
-//     }
-// });
-
+// Evento de cambio de modo oscuro - modo claro
 lightDarkMode.addEventListener("click", () => {
     header.classList.toggle("dark-mode");
     main.classList.toggle("dark-mode-main");
     footer.classList.toggle("dark-mode-footer");
-    panelSidebar.classList.toggle("dark-mode-panel");
+    sidebar.classList.toggle("dark-mode-panel");
     if (header.classList.contains("dark-mode")) {
       lightDarkMode.innerHTML =
         '<i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Claro';
@@ -84,43 +71,10 @@ lightDarkMode.addEventListener("click", () => {
     }
   });
 
-  //intento de ocultar el sidebar
-// sidebarImageBtn.addEventListener("click", () => {
-//   if (sidebarImagePanel.style.display="inline") {
-//     sidebarImagePanel.style.display="none";
-//   } else if (sidebarImagePanel.style.display="none") {
-//     sidebarImagePanel.style.display="inline";
-//   }
-// });
-// sidebarTextBtn.addEventListener("click", () => {
-//   if (sidebarTextPanel.style.display="inline") {
-//     sidebarTextPanel.style.display="none";
-//   } else if (sidebarTextPanel.style.display="none") {
-//     sidebarTextPanel.style.display="inline";
-//   }
-// });
-
-
-// sidebarImageBtn.addEventListener("click", () => {
-//   if(asideCont.style.display="none"){
-//     asideCont.classList.add("open-siderbar");
-//   } else if (asideCont.style.display="flex") {
-//     asideCont.classList.remove("open-sidebar");
-//   };
-
-//     // if(asideCont.classList.add("open-sidebar")) {
-//     //   asideCont.classList.remove("open-sidebar");
-//     //   asideCont.style.display="flex";
-//     // };
-// });
-// sidebarImageBtn.addEventListener("click", () => {
-//   if(asideCont.classList.add("open-sidebar")) {
-//     asideCont.style.display="flex";
-//   }
-// });
 
 // Eventos para abrir y cerrar el panel oculto
 
+// Evento de mostrar y ocultar editor de texto
 sidebarTextBtn.addEventListener("click", () => {
   if(!asideCont.classList.contains("open-sidebar")){
     asideCont.classList.toggle("open-sidebar");
@@ -129,8 +83,10 @@ sidebarTextBtn.addEventListener("click", () => {
   }
   sidebarTextPanel.style.display="flex";
   sidebarImagePanel.style.display="none";
-  panelSidebar.style.overflow="scroll";
+  sidebar.style.overflow="scroll";
 });
+
+// Evento de mostrar y ocultar editor de imágen
 sidebarImageBtn.addEventListener("click", () => {
   if(!asideCont.classList.contains("open-sidebar")){
     asideCont.classList.toggle("open-sidebar");
@@ -139,21 +95,17 @@ sidebarImageBtn.addEventListener("click", () => {
  }
   sidebarImagePanel.style.display="flex";
   sidebarTextPanel.style.display="none";
-  panelSidebar.style.overflow="scroll";
+  sidebar.style.overflow="scroll";
 });
 
+// Evento de botón de cerrar sidebar
 asideCloseBtn.addEventListener("click", () => {
   asideCont.classList.toggle("open-sidebar");
 })
 
 // Evento para introducir la imágen
-
 urlInput.addEventListener("change", () => {
-  // memeImageCont.innerHTML = '<img src="'+ urlInput.value +'" class="meme-image" id="image-cont">';
   memeImageCont.style.backgroundImage=`url(${urlInput.value})`;
-  // if(urlInput.value == "") {
-  //   memeImageCont.innerHTML = '';
-  // }
 });
 
 // Eventos para editar Imagen del meme con filtros
@@ -202,6 +154,7 @@ negativeFilter.addEventListener("input", () => {
   memeImageCont.style.filter=`invert(${negativeFilter.value}%)`;
 });
 
+// Evento del botón de reestablecer filtros
 resetButton.addEventListener("click", () => {
   // Llamo a que el filtro este en su valor default
   imgBgColor.value="#000000";
@@ -300,21 +253,27 @@ noTextBGCheck.addEventListener("click", () => {
   if(noTextBGCheck.checked == true){
     topTextMeme.style.backgroundColor="transparent";
     bottomTextMeme.style.backgroundColor="transparent";
-    // memeImageCont.style.visibility="hidden";
-    // imgDownload.style.backgroundImage=`url("${urlInput.value}")`;
     topTextMeme.style.position="absolute";
     bottomTextMeme.style.position="absolute";
-    // topTextMeme.style.top="0px";
-    // bottomTextMeme.style.top="0px";
   } else {
     topTextMeme.style.backgroundColor=`${textBGColorInput.value}`;
     bottomTextMeme.style.backgroundColor=`${textBGColorInput.value}`;
     topTextMeme.style.position="";
     bottomTextMeme.style.position="";
-    // memeImageCont.style.visibility="";
   }
 });
 
+// Eventos del Espaciado y el Interlineado del texto
+
+spacingTextInput.addEventListener("change", () => {
+  topTextMeme.style.padding=`${spacingTextInput.value}px 0px`;
+  bottomTextMeme.style.padding=`${spacingTextInput.value}px 0px`;
+});
+
+lineHeighTextInput.addEventListener("click", () => {
+  topTextMeme.style.lineHeight=`${lineHeighTextInput.value}`;
+  bottomTextMeme.style.lineHeight=`${lineHeighTextInput.value}`;
+})
 // EVENTO DE DESCARGA
 
 const descargarMeme = () => {

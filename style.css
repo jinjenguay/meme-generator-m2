@@ -115,6 +115,7 @@ main {
     width: 100%;
     flex: 1;
     background-size: cover;
+    background-position: center;
 }
 .meme-image {
     width: 100%;
@@ -164,7 +165,7 @@ main {
     display: none;
     justify-content: flex-end;
 }
-.panel-editor-sidebar {
+#sidebar {
     z-index: 10;
     height: 100vh;
     width: 25%;
@@ -187,7 +188,7 @@ main {
     margin: 5px 10px;
 }
 .dark-mode-panel{
-    background-color: #2d3141;
+    background-color: #2d3141 !important;
     color: white;
 }
 .edit-cont {

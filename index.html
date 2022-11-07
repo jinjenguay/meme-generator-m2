@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,44 +26,44 @@
     <header class="header" id="header">
         <h1 class="header-title">GENERADOR DE MEMES</h1>
         <div class="aside-tools-mode-cont">
-            <button class="aside-tool-image-edit-button header-buttons"><i class="image-edit-button-icon fa-solid fa-image header-icons"></i>Imágen</button>
-            <button class="aside-tool-text-edit-button header-buttons"><i class="text-edit-button-icon fa-solid fa-font header-icons"></i>Texto</button>
-            <button id="mode-btn" class="mode-button header-buttons"><i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Oscuro</button>
+            <button class="aside-tool-image-edit-button header-buttons" aria-label="Botón de apertura del editor de la imágen del meme, apertura del lado derecho" tabindex="1"><i class="image-edit-button-icon fa-solid fa-image header-icons"></i>Imágen</button>
+            <button class="aside-tool-text-edit-button header-buttons" aria-label="Botón de apertura del editor del texto del meme, apertura del lado derecho" tabindex="2"><i class="text-edit-button-icon fa-solid fa-font header-icons"></i>Texto</button>
+            <button id="mode-btn" class="mode-button header-buttons"aria-label="Botón de cambio de modo oscuro o modo claro" tabindex="3"><i class="mode-button-icon fa-solid fa-lightbulb header-icons"></i>Modo Oscuro</button>
         </div>
     </header>
     <!-- FIN DEL HEADER -->
     
     <!-- INICIO DEL MAIN contenedor del lienzo del meme -->
     <main class="main-cont" id="main">
-        <div class="canvas-cont" id="img-download">
+        <div class="canvas-cont" id="img-download" aria-label="Contenedor del meme" tabindex="4">
             <!-- <div class="meme-top-text-cont">
                 <p class="meme-top-text">TEXTO</p>
             </div> -->
-            <p class="meme-top-text">TEXTO</p>
-            <div class="meme-image-cont"></div>
-            <p class="meme-bottom-text">TEXTO</p>
+            <p class="meme-top-text" tabindex="5" >TEXTO</p>
+            <div class="meme-image-cont" aria-label="Contenedor de la imágen del meme" tabindex="6"></div>
+            <p class="meme-bottom-text" tabindex="7">TEXTO</p>
 
             <!-- <div class="meme-bottom-text-cont">
                 <p class="meme-bottom-text">TEXTO</p>
             </div> -->
         </div>
-            <button class="download-button" id="download-meme"><i class="fas fa-download download-button-icon"></i>Descargar</button>
+            <button class="download-button" id="download-meme" aria-label="Botón de descarga del meme" tabindex="8"><i class="fas fa-download download-button-icon"></i>Descargar</button>
     </main>
     <!-- FIN DEL MAIN -->
 
     <!-- INICIA EL PANEL OCULTO DE EDICIÓN DE TEXTO E IMÁGEN -->
     <div class="aside-cont">
-        <aside class="panel-editor-sidebar" id="sidebar">
+        <aside class="editor-sidebar" id="sidebar" aria-label="Barra lateral de edición">
             <!-- EDICIÓN DE IMÁGEN -->
-            <div class="close-aside-btn-cont">
-                <i class="fa-solid fa-xmark"></i>
+            <div class="close-aside-btn-cont" aria-label="Botón de cierre del lateral de edición">
+                <i class="fa-solid fa-xmark close-aside-btn"></i>
             </div>
-            <section id="image-edit-panel-section" class="edit-section">
+            <section class="edit-section" id="image-edit-panel-section" aria-label="Barra lateral de edición de imágen">
                 <h2 class="img-panel-text-title">IMÁGEN</h2>
                 <!-- URL de la imágen del meme -->
                 <div class="image-edit-panel-cont-url edit-cont">
                     <h3 class="img-url-title img-subtitles">URL</h3>
-                    <input type="text" class="url-image-input" id="url-img-input" aria-label="URL de imagen">
+                    <input type="text" class="url-image-input" id="url-img-input" aria-label="Input de la url">
                 </div>
                 <!-- Fondo del meme -->
                 <div class="image-edit-panel-cont-fondo">
@@ -71,12 +71,12 @@
                     <div class="fondo-divs-cont">
                         <!-- Color sobre imágen -->
                         <div class="blend-mode-color-cont">
-                            <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#000000">
+                            <input type="color" id="blend-mode-color-input" value="#000000" aria-label="Input de selección del color de la imágen">
                             <span id="blend-mode-color" aria-hidden="true">#000000</span>
                         </div>
                         <!-- Impacto del color sobre imágen -->
                         <div class="blend-mode-cont edit-cont">
-                            <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="img-edit-input">
+                            <select class="img-edit-input" id="blend-mode-select" aria-label="Selector del blend del color de la imágen">
                                 <option value="unset">Ninguno</option>
                                 <option value="luminosity">Luminosidad</option>
                                 <option value="darken">Oscurecer</option>
@@ -128,15 +128,15 @@
                     </div>
                 </div>
                 <!-- El botoncito que deshace tu obra maestra -->
-                <button class="default-button" id="default-filters-button">Reestablecer filtros</button>
+                <button class="default-button" id="default-filters-button" aria-label="Botón de reestablecer filtros de la imágen">Reestablecer filtros</button>
             </section>    
             <!-- EDICIÓN DE TEXTO -->
-            <section id="text-edit-panel-section" class="edit-section">
+            <section id="text-edit-panel-section" class="edit-section" aria-label="Barra lateral de edición de texto">
                 <h2 class="img-panel-text-title">TEXTO</h2>
                 <!-- Edición de texto superior del meme -->
                 <div class="superior-text-edit-cont edit-cont">
                     <h3 class="superior-text-title text-subtitles">SUPERIOR</h3>
-                    <textarea class="text-edit-input" id="top-text-input" aria-label="Texto superior">TEXTO</textarea>
+                    <textarea class="text-edit-input" id="top-text-input" aria-label="Input editor del texto superior del meme">TEXTO</textarea>
                     <div class="flex-container panel-control-checkbox">
                       <input type="checkbox" id="no-top-text-checkbox"><label for="no-top-text-checkbox">Sin texto
                         superior</label>
@@ -145,7 +145,7 @@
                 <!-- Edición de texto inferior del meme -->
                 <div class="inferior-text-edit-cont edit-cont">
                     <h3 class="inferior-text-title text-subtitles">INFERIOR</h3>
-                    <textarea class="text-edit-input" id="bottom-text-input" aria-label="Texto inferior">TEXTO</textarea>
+                    <textarea class="text-edit-input" id="bottom-text-input" aria-label="Input editor del texto inferior del meme">TEXTO</textarea>
                     <div class="flex-container panel-control-checkbox">
                       <input type="checkbox" id="no-bottom-text-checkbox"><label for="no-bottom-text-checkbox">Sin texto
                         inferior</label>
@@ -154,7 +154,7 @@
                 <!-- Edición de fuente del meme -->
                 <div class="meme-text-font edit-cont">
                     <h3 class="text-subtitles">FUENTE</h3>
-                    <select name="Familia de fuente" id="text-font-select" class="text-edit-input" aria-label="Familia de fuente">
+                    <select name="Familia de fuente" id="text-font-select" class="text-edit-input" aria-label="Selección de fuente del texto del meme">
                         <option value="Arial">Arial</option>
                         <option value="Arial Black">Arial Black</option>
                         <option value="Comic Sans MS">Comic Sans MS</option>
@@ -167,12 +167,12 @@
                     </select>
                     <div class="font-size-align-cont">
                         <div class="font-size-cont">
-                          <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="text-edit-input" id="text-size-input" min="12" value="40">
+                          <input type="number" name="Tamaño de fuente" class="text-edit-input" id="text-size-input" min="12" value="40" aria-label="Editor del tamaño de fuente">
                         </div>
                         <div class="align-buttons-cont">
-                          <button class="align-button" id="text-left-align-button" aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                          <button class="align-button" id="text-center-align-button" aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
-                          <button class="align-button" id="text-right-align-button" aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                          <button class="align-button" id="text-left-align-button" aria-label="Botón para alinear texto a la izquierda"><i class="fas fa-align-left"></i></button>
+                          <button class="align-button" id="text-center-align-button" aria-label="Botón para alinear texto al centro"><i class="fas fa-align-center"></i></button>
+                          <button class="align-button" id="text-right-align-button" aria-label="Botón para alineat texto a la derecha"><i class="fas fa-align-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                 <div class="text-color-edit-cont">
                     <h3 class="text-subtitles">COLOR</h3>
                     <div class="text-color-edit-input">
-                      <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto">
+                      <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Editor del color del texto">
                       <span id="text-color" aria-hidden="true">#000000</span>
                     </div>
                 </div>
@@ -197,16 +197,15 @@
                 <!-- Edición del espaciado del texto del meme -->
                 <div class="text-spacing-cont edit-cont">
                   <h3 class="text-subtitles">ESPACIADO</h3>
-                  <input type="number" id="spacing-input" class="text-edit-input" aria-label="Espaciado" min="10" max="50" value="35">
+                  <input type="number" id="spacing-input" class="text-edit-input" min="15" max="55" value="20" aria-label="Edición del espaciado del texto">
                 </div>
                 <!-- Edición del interlineado del texto del meme -->
                 <div class="line-height-cont edit-cont">
                   <h3 class="text-subtitles">INTERLINEADO</h3>
-                  <select id="line-height-input" class="text-edit-input" aria-label="Interlineado">
-                    <option value="0.8">0.8</option>
+                  <select id="line-height-input" class="text-edit-input" aria-label="Edición del interlineado del texto">
+                    <option value="0.5">0.5</option>
                     <option value="1">1</option>
-                    <option value="1.2" selected="">1.2</option>
-                    <option value="1.5">1.5</option>
+                    <option value="1.5" selected="">1.5</option>
                     <option value="2">2</option>
                     <option value="2.5">2.5</option>
                   </select>
@@ -218,8 +217,8 @@
 
     <!-- COMIENZA EL FOOTER -->
     <footer id="footer">
-        <div class="footer-info-cont">
-            <p class="footer-info">Hecho por Jennifer Ews. 2022</p>
+        <div class="footer-info-cont" aria-label="Créditos:" tabindex="9" >
+            <p class="footer-info" tabindex="10">Hecho por Jennifer Ews. 2022</p>
         </div>
     </footer>
     <!-- FINALIZA EL FOOTER -->
