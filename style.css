@@ -71,25 +71,14 @@ main {
     width: 100%;
     max-width: 450px;
     height: 450px;
-    /* margin: 30px 0; */
-    /* background-color: #fff; */
+
     background-color: black;
     position: relative;
     background-size: cover;
     display: flex;
     flex-direction: column;
 }
-/* .meme-top-text-cont {
-    width: 100%;
-    min-height: 85px;
-    position: static;
-    top: 0;
-    padding: 5px 10px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+
 .meme-top-text {
     width: 100%;
     color: black;
@@ -100,17 +89,9 @@ main {
     font-size: 40px;
     z-index: 5;
     top: 0;
+    word-break: break-word;
 }
 
-/* .meme-bottom-text-cont {
-    width: 100%;
-    min-height: 85px;
-    padding: 5px 10px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 .meme-image-cont {
     width: 100%;
     flex: 1;
@@ -132,18 +113,9 @@ main {
     font-size: 40px;
     z-index: 5;
     bottom: 0;
+    word-break: break-word;
 }
-/* .restablecerFiltros {
-    filter: brightness(1)
-            opacity(1)
-            contrast(1)
-            blur(0)
-            grayscale(0)
-            sepia(0)
-            saturate(100)
-            hue-rotate(0)
-            invert(0)
-} */
+
 .download-button {
     padding: 10px 10px;
     /* Margin sugerido por Gabi, investigar medida em */
@@ -185,7 +157,7 @@ main {
 }
 .fa-xmark {
     font-size: 25px;
-    margin: 5px 10px;
+    margin: 10px 20px;
 }
 .dark-mode-panel{
     background-color: #2d3141 !important;
@@ -195,9 +167,6 @@ main {
     width: 100%;
     display: flex;
     flex-direction:column;
-}
-.font-size-align-cont {
-    display: flex;
 }
 /* ESTILOS DE EDICIÓN DE IMÁGEN */
 #image-edit-panel-section {
@@ -251,6 +220,10 @@ main {
     border-radius: 5px;
     border: none;
 }
+.font-size-align-cont {
+    display: flex;
+    flex-wrap: wrap;
+}
 .align-button {
     padding: 6px 5px;
     border-radius: 5px;
@@ -277,7 +250,12 @@ footer {
     color: #fff;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 830px) {
+    .align-buttons-cont {
+        margin: 0px;
+    }
+}
+@media (max-width: 620px) {
     #sidebar {
         width: 100%;
     }
@@ -286,5 +264,21 @@ footer {
     }
     #text-edit-panel-section {
         margin: 0 35px 20px 35px;
+    }
+    .align-buttons-cont {
+        margin: 0px;
+    }
+    .fa-xmark {
+        font-size: 28px;
+        margin: 20px 20px;
+    }
+}
+@media (max-width: 460px) {
+    .align-buttons-cont {
+        margin: 0 0 0 5px;
+    }
+    .fa-xmark {
+        font-size: 28px;
+        margin: 20px 25px;
     }
 }

@@ -118,41 +118,32 @@ imgBlendMode.addEventListener("change", () => {
   memeImageCont.style.backgroundBlendMode=imgBlendMode.value;
 });
 
-brightnessFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`brightness(${brightnessFilter.value})`;
-});
+// Solución de Gabi para mi problema, los filtros no funcionaban juntos, cuando editaba uno se borraba el anterior
 
-contrastFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`contrast(${contrastFilter.value})`;
-});
+function darEstilos() {
+  brillo = brightnessFilter.value;
+  contraste = contrastFilter.value;
+  opacidad = opacityFilter.value;
+  desenfocar = blurFilter.value;
+  escalaDeGrises = grayscalefilter.value;
+  sepia = sepiaFilter.value;
+  saturacion = saturateFilter.value;
+  hue = hueFilter.value;
+  negativo = negativeFilter.value;
 
-opacityFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`opacity(${opacityFilter.value})`;
-});
+  memeImageCont.style.filter = `brightness(${brillo}) contrast(${contraste}) opacity(${opacidad}) blur(${desenfocar}px) grayscale(${escalaDeGrises}%) sepia(${sepia}%) saturate(${saturacion}%) hue-rotate(${hue}deg) invert(${negativo}%)`;
+}
 
-blurFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`blur(${blurFilter.value}px)`;
-});
+brightnessFilter.addEventListener("input", darEstilos);
+contrastFilter.addEventListener("input", darEstilos);
+opacityFilter.addEventListener("input", darEstilos);
+blurFilter.addEventListener("input", darEstilos);
+grayscalefilter.addEventListener("input", darEstilos);
+sepiaFilter.addEventListener("input", darEstilos);
+saturateFilter.addEventListener("input", darEstilos);
+hueFilter.addEventListener("input", darEstilos);
+negativeFilter.addEventListener("input", darEstilos);
 
-grayscalefilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`grayscale(${grayscalefilter.value}%)`;
-});
-
-sepiaFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`sepia(${sepiaFilter.value}%)`;
-});
-
-saturateFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`saturate(${saturateFilter.value}%)`;
-});
-
-hueFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`hue-rotate(${hueFilter.value}deg)`;
-});
-
-negativeFilter.addEventListener("input", () => {
-  memeImageCont.style.filter=`invert(${negativeFilter.value}%)`;
-});
 
 // Evento del botón de reestablecer filtros
 resetButton.addEventListener("click", () => {
