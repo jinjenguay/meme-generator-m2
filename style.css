@@ -71,14 +71,12 @@ main {
     width: 100%;
     max-width: 450px;
     height: 450px;
-
     background-color: black;
     position: relative;
     background-size: cover;
     display: flex;
     flex-direction: column;
 }
-
 .meme-top-text {
     width: 100%;
     color: black;
@@ -91,7 +89,6 @@ main {
     top: 0;
     word-break: break-word;
 }
-
 .meme-image-cont {
     width: 100%;
     flex: 1;
@@ -212,7 +209,6 @@ main {
 }
 .text-subtitles {
     margin: 8px 0;
-
 }
 .text-edit-input {
     padding: 6px 6px;

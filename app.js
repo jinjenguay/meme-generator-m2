@@ -55,7 +55,6 @@ const spacingTextInput = $("#spacing-input");
 const lineHeighTextInput = $("#line-height-input");
 
 
-
 // Evento de cambio de modo oscuro - modo claro
 lightDarkMode.addEventListener("click", () => {
     header.classList.toggle("dark-mode");
