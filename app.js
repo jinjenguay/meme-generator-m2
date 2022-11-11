@@ -53,6 +53,9 @@ const textBGColorInput= $("#text-background-color-input");
 const noTextBGCheck = $("#text-no-background-checkbox");
 const spacingTextInput = $("#spacing-input");
 const lineHeighTextInput = $("#line-height-input");
+const noneOutlineText = $("#outline-none-btn");
+const lightOutlineText = $("#outline-light-btn");
+const darkOutlineText = $("#outline-dark-btn");
 
 
 // Evento de cambio de modo oscuro - modo claro
@@ -263,7 +266,32 @@ spacingTextInput.addEventListener("change", () => {
 lineHeighTextInput.addEventListener("click", () => {
   topTextMeme.style.lineHeight=`${lineHeighTextInput.value}`;
   bottomTextMeme.style.lineHeight=`${lineHeighTextInput.value}`;
-})
+});
+
+//Eventos del contorno del texto 
+noneOutlineText.addEventListener("click", () => {
+    topTextMeme.classList.contains("lightOutlineValue");
+    bottomTextMeme.classList.contains("lightOutlineValue");
+    topTextMeme.classList.contains("darkOutlineValue");
+    bottomTextMeme.classList.contains("darkOutlineValue");
+    topTextMeme.classList.remove("lightOutlineValue");
+    bottomTextMeme.classList.remove("lightOutlineValue");
+    topTextMeme.classList.remove("darkOutlineValue");
+    bottomTextMeme.classList.remove("darkOutlineValue");
+});
+darkOutlineText.addEventListener("click", () => {
+  topTextMeme.classList.add("darkOutlineValue");
+  bottomTextMeme.classList.add("darkOutlineValue");
+});
+lightOutlineText.addEventListener("click", () => {
+  topTextMeme.classList.contains("darkOutlineValue");
+  bottomTextMeme.classList.contains("darkOutlineValue");
+  topTextMeme.classList.remove("darkOutlineValue");
+  bottomTextMeme.classList.remove("darkOutlineValue");
+  topTextMeme.classList.add("lightOutlineValue");
+  bottomTextMeme.classList.add("lightOutlineValue");
+});
+
 // EVENTO DE DESCARGA
 
 const descargarMeme = () => {

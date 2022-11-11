@@ -163,7 +163,7 @@ main {
 .edit-cont {
     width: 100%;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 /* ESTILOS DE EDICIÓN DE IMÁGEN */
 #image-edit-panel-section {
@@ -231,6 +231,23 @@ main {
 .text-bg-btn-cont {
     margin: 5px 0 0 0;
 }
+.outline-text-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+.outline-text-btn {
+    background-color: #8794c0;
+    padding: 6px 12px;
+    margin: 0 5px 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.lightOutlineValue {
+    -webkit-text-stroke: 2px #ffffff;
+}
+.darkOutlineValue{
+    -webkit-text-stroke: 2px #000000;
+}
 /* FOOTER STYLES */
 footer {
     background-color: #5d7599;
@@ -247,6 +264,9 @@ footer {
 }
 
 @media (max-width: 830px) {
+    .header-buttons {
+        font-size: 20px;
+    }
     .align-buttons-cont {
         margin: 0px;
     }
